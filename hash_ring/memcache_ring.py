@@ -18,7 +18,7 @@ class MemcacheRing(memcache.Client):
             self.server_mapping[server_uri] = server_obj
 
     def _get_server(self, key):
-        if type(key) == types.TupleType:
+        if type(key) == tuple:
             return memcache.Client._get_server(key)
 
         for i in range(self._SERVER_RETRIES):
